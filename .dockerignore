@@ -1,0 +1,7 @@
+*.md
+docs
+test
+.git
+.gitignore
+.env
+.cache
