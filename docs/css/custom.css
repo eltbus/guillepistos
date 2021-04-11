@@ -63,3 +63,8 @@ a.announce:link, a.announce:visited {
 a.announce:hover {
   color: var(--md-accent-fg-color);
 }
+
+.md-typeset div.arithmatex {
+  overflow: initial;
+  overflow-x: auto;
+}

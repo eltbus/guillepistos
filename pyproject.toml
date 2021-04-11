@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "Guillepistos"
+version = "0.0.0"
+description = "Mi documentación"
+authors = [
+    "Guillermo Sánchez <naselliug@gmail.com>"
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+markdown-katex = "*"
+mkdocs = "*"
+mkdocs-material = "*"
+mkdocs-material-extensions = "*"
+mkdocs-markdownextradata-plugin = "*"
+
+
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true

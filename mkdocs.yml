@@ -1,95 +1,149 @@
-site_name: Guille Pistos
-site_description: Donde publico mis "pistos"
-site_url: https://fastapi.tiangolo.com/
+nav:
+  - Home: index.md
+  - Pistos:
+    - Intro: pistos/index.md
+    - "Ay, mis gallinitas": pistos/chickens.md
+  - Academia:
+    - Intro: academia/index.md
+    # - Matemáticas:
+    #   - Ecuaciones diferenciales:
+    #     - Ordinarias: academia/math/odes.md
+    #     - Parciales: academia/math/pdes.md
+    #   - Bayes: academia/math/bayes.md
+    # - Python:
+    #   - pytest: academia/python/pytesting.md
+    #   - SQLModel: academia/python/sqlmodel.md
+    #   - FastAPI: academia/python/fastapi.md
+    #   - SQLAlchemy: academia/python/sqlalchemy.md
+    #   - Asyncio: academia/python/asyncio.md
+    #   - Multithreading: academia/python/multithreading.md
+    #   - Multiprocessing: academia/python/multiprocessing.md
+    #   - Decoradores: academia/python/decorators.md
+    #   - Profiling: academia/python/profiling.md
+  - CV: cv.md
+################################################################################
+site_name: guillepistos
+site_description: Yep
+site_url: http://guillepistos.com/
+repo_url: https://github.com/eltbus/guillepistos
+
 theme:
   name: material
-  custom_dir: overrides
-  palette:
-  - scheme: default
-    primary: teal
-    accent: amber
-    toggle:
-      icon: material/lightbulb-outline
-      name: Switch to light mode
-  - scheme: slate
-    primary: teal
-    accent: amber
-    toggle:
-      icon: material/lightbulb
-      name: Switch to dark mode
-  features:
-  - search.suggest
-  - search.highlight
   icon:
     repo: fontawesome/brands/github-alt
-  logo: img/icon-white.svg
-  favicon: img/favicon.png
-  language: en
-# repo_name: tiangolo/fastapi
-# repo_url: https://github.com/tiangolo/fastapi
-edit_uri: ''
-plugins:
-- search
-- markdownextradata:
-    data: data
-nav:
-- Home: index.md
-- Formacion:
-    - Física:
-        - Termodinámica: formacion/fisicas/termodinamica.md
-    - Matematicas:
-        - EDOs: formacion/matematicas/edos.md
-        - PDEs: formacion/matematicas/pdes.md
-        - Bayes: formacion/matematicas/bayes.md
-    - Programacion:
-        - Python:
-            - Decorators: formacion/programacion/python/decorators.md
-        - Docker: index.md
-        - Kubernetes: index.md
-        - AWS:
-            - DynamoDB: formacion/programacion/aws/dynamodb.md
-- Opinion:
-    - Matematicas:
-        - EDOs: formacion/matematicas/edos.md
-        - PDEs: formacion/matematicas/pdes.md
-- Languages:
-    - en: /
-    - es: /es/
+  logo: img/stack.svg
+  favicon: img/favicon-32x32.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: amber
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+
 markdown_extensions:
-- toc:
-    permalink: true
-- markdown.extensions.codehilite:
-    guess_lang: false
-- markdown_include.include:
-    base_path: docs
-- admonition
-- codehilite
-- extra
-- pymdownx.superfences:
-    custom_fences:
-    - name: mermaid
-      class: mermaid
-      format: !!python/name:pymdownx.superfences.fence_div_format ''
-- pymdownx.tabbed
+  - markdown.extensions.toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      permalink: ""
+  - markdown.extensions.admonition:
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - pymdownx.betterem:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        # Mermaid diagrams
+        - name: diagram
+          class: diagram
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: math
+          class: arithmatex
+          format: !!python/object/apply:pymdownx.arithmatex.arithmatex_fenced_format {kwds: {mode: generic, tag: pre}}
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite:
+      custom_inline:
+        - name: math
+          class: arithmatex
+          format: !!python/object/apply:pymdownx.arithmatex.arithmatex_inline_format {kwds: {mode: generic}}
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      social_url_shortener: true
+      user: facelessuser
+      repo: pymdown-extensions
+      normalize_issue_symbols: true
+  - pymdownx.tilde:
+  - pymdownx.caret:
+  - pymdownx.smartsymbols:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.progressbar:
+  - pymdownx.arithmatex:
+      generic: true
+      block_tag: 'pre'
+  - pymdownx.mark:
+  - pymdownx.striphtml:
+  - pymdownx.snippets:
+      base_path:
+      check_paths: true
+  - pymdownx.keys:
+      separator: "\uff0b"
+  - pymdownx.details:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.saneheaders:
+
 extra:
   social:
-  - icon: fontawesome/brands/github-alt
-    link: https://github.com/eltbus/
-  - icon: fontawesome/brands/twitter
-    link: https://twitter.com/gsabreu1
-  - icon: fontawesome/brands/linkedin
-    link: www.linkedin.com/in/guille-sanchez-de-abreu
-  - icon: fontawesome/solid/globe
-    link: https://tiangolo.com
-  alternate:
-  - link: /
-    name: en - English
-  - link: /es/
-    name: es - español
+    - icon: fontawesome/brands/github
+      link: https://github.com/facelessuser
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/TWs8Tgr
 extra_css:
-- css/termynal.css
-- css/custom.css
+  # - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css
 extra_javascript:
-- https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js
-- js/termynal.js
-- js/custom.js
+  - https://unpkg.com/mermaid@8.13.3/dist/mermaid.min.js
+  # - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - markdownextradata:
+      data: data
+  - search
+  # - git-revision-date-localized

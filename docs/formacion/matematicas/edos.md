@@ -1,1 +1,0 @@
-# Ecuaciones de primer grado
