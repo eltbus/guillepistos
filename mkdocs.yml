@@ -29,8 +29,6 @@ repo_url: https://github.com/eltbus/guillepistos
 
 theme:
   name: material
-  icon:
-    repo: fontawesome/brands/github-alt
   logo: img/stack.svg
   favicon: img/favicon-32x32.png
   palette:
@@ -144,6 +142,6 @@ extra_javascript:
 
 plugins:
   - markdownextradata:
-      data: data
+      data: docs/data
   - search
   # - git-revision-date-localized

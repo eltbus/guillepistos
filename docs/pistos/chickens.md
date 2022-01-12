@@ -43,12 +43,12 @@ Tenemos la suerte de tener un terreno disponible y, además, conocer a un chaval
 
 Hemos pensado pagarle tanto por hora como por huevo.
 
-Ahora bien, seamos razonables. Esta tarea no va a darle un salario digno. No vamos a comprar 900€ de huevos.
+Ahora bien, seamos razonables: esta tarea no va a darle un salario digno. No vamos a comprar 900€ de huevos al mes.
 
 ### Pero, ¿esto es rentable?
 A parte de la inversión inicial en gallinas y gallineros, ¿cuánto cuesta cada huevo?
 
-Se puede hacer un pequeño programita de Python para pensar en los costes asociados variando distintas dimensiones, tal que podamos elegir una combinacion interesante. Como no suelo usar clases, voy a practicar un poquito, pero no esperes un programa super limpio  y perfecto. Estoy cansado ya de pensar en gallinas.
+Se puede hacer un pequeño programita de Python para pensar en los costes asociados variando distintas dimensiones, tal que podamos elegir una combinacion interesante.
 
 === "Trabajador"
     ```python
